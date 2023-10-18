@@ -9,6 +9,7 @@ import AddProduct from "../pages/AddProduct";
 import Cart from "../pages/Cart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Checkout from "../pages/Checkout";
 
 const Router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
           {
               path: '/register',
               element: <Register></Register>
+          },
+          {
+              path: '/checkout',
+              element: <Checkout></Checkout>
           }
       ]
     },
