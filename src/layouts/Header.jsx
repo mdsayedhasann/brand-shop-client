@@ -12,10 +12,10 @@ const Header = () => {
         <NavLink to="/addproduct">Add Product</NavLink>
       </li>
       <li>
-        <NavLink to="/addproduct">My Cart</NavLink>
+        <NavLink to="/cart">My Cart</NavLink>
       </li>
       <li>
-        <NavLink to="/addproduct">Login</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </li>
     </>
   );
