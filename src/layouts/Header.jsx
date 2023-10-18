@@ -56,9 +56,10 @@ const Header = () => {
         </div>
         <div className="navbar-end flex gap-2">
             <p>
-            {user.email}
+            {user?.email}
             </p>
-          <a className="btn">  Button</a>
+            {user && <a className="btn"> Logout </a>}
+          
         </div>
       </div>
     </div>

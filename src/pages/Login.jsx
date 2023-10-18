@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthContext/AuthProvider";
 
 const Login = () => {
+    const {userSignIn} = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value
         const password = form.password.value
         console.log(email, password);
+        // user signin 
+        userSignIn(email, password)
+        .then(() => {
+            console.log('Login hoise');
+        })
+        .catch(error => {
+            console.error(error);
+        })
     }
   return (
     <div className="max-w-7xl mx-auto">

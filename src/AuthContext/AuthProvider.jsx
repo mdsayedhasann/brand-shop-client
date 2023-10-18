@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.init';
 
@@ -15,6 +15,11 @@ const AuthProvider = ({children}) => {
     }
     // Create User End
 
+    // User Signin Start
+    const userSignIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+    // User Signin End
 
     // On Auth State Change Start
     useEffect(() => {
@@ -28,7 +33,7 @@ const AuthProvider = ({children}) => {
     },[])
     // On Auth State Change End
 
-    const AuthInfo = {user, createUser}
+    const AuthInfo = {user, createUser, userSignIn}
     return (
         <AuthContext.Provider value={AuthInfo}>
             {children}
