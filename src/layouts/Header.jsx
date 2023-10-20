@@ -1,10 +1,20 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import './Header.css'
+import "./Header.css";
 import { AuthContext } from "../AuthContext/AuthProvider";
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+  const { user, logout, updateUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        console.log("Log Out Success");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -55,11 +65,16 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end flex gap-2">
-            <p>
-            {user?.email}
-            </p>
-            {user && <a className="btn"> Logout </a>}
-          
+          <div className="flex items-center gap-2">
+              <img className="w-[30px] rounded-xl" src={user?.photoURL} alt="" />
+            <p>{user?.displayName}</p>
+          </div>
+          {user && (
+            <a onClick={handleLogout} className="btn">
+              {" "}
+              Logout{" "}
+            </a>
+          )}
         </div>
       </div>
     </div>
