@@ -12,15 +12,7 @@ const Brands = () => {
         ))}
       </div>
 
-      {/* <div>
-          <form>
-              <select name="" id="">
-                  {
-                      brands.map(brand => <option className="w-[100px]" key='brand._id' value={brand.brand}>{brand.brand}</option>)
-                  }
-              </select>
-          </form>
-      </div> */}
+
     </div>
   );
 };

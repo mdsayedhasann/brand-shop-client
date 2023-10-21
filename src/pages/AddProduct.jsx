@@ -15,14 +15,25 @@ const AddProduct = () => {
       const name = form.name.value
       const shortDescription = form.shortDescription.value
       const price = form.price.value
-      const photo = form.photo.value
-
+      const photo = form.photo.value 
+      const newProduct = {name, typeDropsown, brandDropsown, shortDescription, price, photo}
       console.log(name, shortDescription, price, photo, typeDropsown, brandDropsown);
+
+      fetch('http://localhost:5000/products', {
+          method: "POST", 
+          headers: {
+              'content-type' : 'application/json'
+          }, 
+          body: JSON.stringify(newProduct)
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+      })
 
   }
   return (
     <div className="max-w-7xl mx-auto">
-
         <form onSubmit={handleAddProduct}>
       <div>
 
