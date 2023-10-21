@@ -20,7 +20,7 @@ const BrandItems = () => {
     })
   }, [])
 
-console.log(products);
+// console.log(products);
   return (
     <div className="max-w-7xl mx-auto">
         <p>

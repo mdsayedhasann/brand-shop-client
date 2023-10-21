@@ -9,8 +9,8 @@ const Brand = ({ brand }) => {
       <div>
         <figure>
             <Link to={`/brand/${brand._id}`}>
-                <img src="https://i.ibb.co/48rQ3Lv/image.png" alt="" />
-                <h3 className="text-center">{brand.brand}</h3></Link>
+                <img className="w-[200px] h-[200px]" src={brand.image_url} alt="" />
+                <h3 className="text-center text-2xl">{brand.brand}</h3></Link>
         </figure>
       </div>
     </div>
