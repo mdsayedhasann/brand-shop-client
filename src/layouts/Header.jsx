@@ -17,16 +17,16 @@ const Header = () => {
   };
   const links = (
     <>
-      <li>
+      <li className="mx-2">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="mx-2">
         <NavLink to="/addproduct">Add Product</NavLink>
       </li>
-      <li>
+      <li className="mx-2">
         <NavLink to="/cart">My Cart</NavLink>
       </li>
-      <li>
+      <li className="mx-2">
         <NavLink to="/login">Login</NavLink>
       </li>
     </>

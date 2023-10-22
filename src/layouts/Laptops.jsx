@@ -21,7 +21,7 @@ const Laptops = () => {
                 </h3>
             </div>
 
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-3'>
                 {
                     laptopProducts.map(laptop => <Laptop key={laptop._id} laptop={laptop}></Laptop>)
                 }

@@ -22,7 +22,7 @@ const Products = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3'>
             {
-                products.map(product => <Product key={product._id} product={product}></Product>)
+                products.map(product => <Product key={product._id} product={product}></Product>).slice(0,9)
             }
         </div>
         </div>

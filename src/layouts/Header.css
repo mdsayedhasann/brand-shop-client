@@ -1,4 +1,6 @@
 .active{
-    background-color: #F59A57 !important;
+    /* background-color: #F59A57 !important; */
+    background-color: transparent !important;
     color: #000 !important;
+    border-bottom: 1px solid #FBB232 !important;
 }

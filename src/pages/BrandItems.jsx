@@ -2,40 +2,53 @@
 
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import BrandItem from "../layouts/BrandItem";
+import DisplayProduct from "../layouts/DisplayProduct";
 
 const BrandItems = () => {
   const branddd = useLoaderData();
- 
-  const [products, setProducts] = useState([])
-  const [displayProducts, setDisplayProducts] = useState([])
+
+  const [products, setProducts] = useState([]);
+  const [displayProducts, setDisplayProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
-    .then(res => res.json())
-    .then(data => {
-        setProducts(data)
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
         console.log(displayProducts);
-        setDisplayProducts(data.filter(prod => prod.brandDropsown === branddd.brand ))
-    })
-  }, [])
+        setDisplayProducts(
+          data.filter((prod) => prod.brandDropsown === branddd.brand)
+        );
+      });
+  }, []);
 
-// console.log(products);
+  // console.log(products);
   return (
     <div className="max-w-7xl mx-auto">
-        <p>
-            {
-                <>
-                <p>{branddd.brand }</p>
-                <p>{branddd._id}</p>
-                {
-                    displayProducts.map(product => <p key={product._id}>{product.name}</p>)
-                }
-                </>
+      <div className="py-24 bg-gradient-to-br from-[#762970] flex justify-center items-center">
+        <div className="text-3xl text-white breadcrumbs">
+          <ul>
+            <li>
+              <Link to={'/'}>Home</Link>
+            </li>
+            <li>
+              <a>Brands</a>
+            </li>
+            <li>{branddd.brand}</li>
+          </ul>
+        </div>
+      </div>
 
-            }
-        </p>
-    
+      {/* Brand Page Slider Start */}
+      <div>
+        
+      </div>
+      {/* Brand Page Slider Start */}
+     <div className="grid grid-cols-1 md:grid-cols-3 py-5">
+        {displayProducts.map(displayProduct => <DisplayProduct key={displayProduct._id} displayProduct={displayProduct}></DisplayProduct>)}
+     </div>
     </div>
   );
 };

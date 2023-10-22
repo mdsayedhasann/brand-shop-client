@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Mobile = ({ mobileProd }) => {
-  const { name, shortDescription, brandDropsown, photo } = mobileProd;
+  const { _id, name, shortDescription, brandDropsown, photo } = mobileProd;
   return (
     <div>
       <div>
@@ -15,7 +16,19 @@ const Mobile = ({ mobileProd }) => {
               {name}
               <div className="badge badge-secondary">New</div>
             </h2>
-            <p>{shortDescription}</p>
+            <p>{ shortDescription.slice(0,60) } ... </p>
+            
+
+            {/*  */}
+            <div className="flex justify-between items-center">
+            <div>
+              <Link to={`/product/${_id}`}>
+                <button className="btn bg-gradient-to-r from-[#975D89] to-[#AC2F67] text-white my-2">
+                  View Product
+                </button>
+              </Link>
+            </div>
+
             <div className="card-actions justify-end">
               <div className="badge badge-outline badge-primary">
                 {" "}
@@ -24,7 +37,9 @@ const Mobile = ({ mobileProd }) => {
               {/* <div className="badge badge-outline">  </div> */}
             </div>
 
-            
+           
+          </div>    
+            {/*  */}
 
 
           </div>

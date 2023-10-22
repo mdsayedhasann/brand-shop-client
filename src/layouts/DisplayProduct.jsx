@@ -1,31 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Product = ({ product }) => {
-  const {
-    _id,
-    name,
-    shortDescription,
-    brandDropsown,
-    photo,
-    typeDropsown,
-    price,
-  } = product;
-
-  return (
-    <div>
-      <div className="card w-96 bg-base-100 shadow-xl my-3">
+const DisplayProduct = ({displayProduct}) => {
+    const {
+        _id,
+        name,
+        shortDescription,
+        brandDropsown,
+        photo,
+        typeDropsown,
+        price,
+      } = displayProduct;
+    return (
+        <div>
+      <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
-          <img className="h-[260px]" src={photo} alt="Shoes" />
+          <img src={photo} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
             {name}
+            <div className="badge badge-secondary">New</div>
           </h2>
+          <p>{shortDescription}</p>
 
           <div className="flex justify-between items-center ">
             <div className="card-actions py-3">
-              <div className="badge badge-outline">{brandDropsown}</div>
+              {/* <div className="badge badge-outline">{brandDropsown}</div> */}
               <div className="badge badge-outline">Type: {typeDropsown}</div>
             </div>
 
@@ -79,7 +80,7 @@ const Product = ({ product }) => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default Product;
+export default DisplayProduct;
