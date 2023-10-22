@@ -6,10 +6,10 @@ const Mobile = ({ mobileProd }) => {
   const { _id, name, shortDescription, brandDropsown, photo } = mobileProd;
   return (
     <div>
-      <div>
+      <div className="my-3">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure>
-            <img src={photo} alt="Shoes" />
+            <img className=" h-[250px]" src={photo} alt="Shoes" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">

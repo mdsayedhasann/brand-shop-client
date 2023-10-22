@@ -53,7 +53,7 @@ const AuthProvider = ({children}) => {
     },[])
     // On Auth State Change End
 
-    const AuthInfo = {user, createUser, userSignIn, logout, updateUser}
+    const AuthInfo = {user, createUser, userSignIn, logout, updateUser, loading}
     return (
         <AuthContext.Provider value={AuthInfo}>
             {children}

@@ -22,7 +22,7 @@ const Mobiles = () => {
 
             <div className='grid grid-cols-3 gap-3'>
                 {
-                    mobileProduct.map(mobileProd => <Mobile key={mobileProd.name} mobileProd={mobileProd}></Mobile>)
+                    mobileProduct.map(mobileProd => <Mobile key={mobileProd.name} mobileProd={mobileProd}></Mobile>).slice(0,6)
                 }
             </div>
         </div>

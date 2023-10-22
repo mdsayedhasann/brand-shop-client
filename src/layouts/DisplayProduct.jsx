@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,16 +14,16 @@ const DisplayProduct = ({displayProduct}) => {
       } = displayProduct;
     return (
         <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl my-3">
         <figure>
-          <img src={photo} alt="Shoes" />
+          <img className='h-[250px]' src={photo} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
             {name}
             <div className="badge badge-secondary">New</div>
           </h2>
-          <p>{shortDescription}</p>
+          <p>{shortDescription.slice(0,100)}</p>
 
           <div className="flex justify-between items-center ">
             <div className="card-actions py-3">
