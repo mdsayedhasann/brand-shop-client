@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import { AuthContext } from "../AuthContext/AuthProvider";
 
@@ -59,7 +59,10 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          {/* <a className="btn btn-ghost normal-case text-xl"></a> */}
+          <Link to={'/'}>
+            <img className="w-1/2" src="https://i.ibb.co/3SHnf7M/a.png" alt="" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

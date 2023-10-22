@@ -23,6 +23,10 @@ const Mobile = ({ mobileProd }) => {
               </div>
               {/* <div className="badge badge-outline">  </div> */}
             </div>
+
+            
+
+
           </div>
         </div>
       </div>
