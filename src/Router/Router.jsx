@@ -13,6 +13,7 @@ import Checkout from "../pages/Checkout";
 import BrandItems from "../pages/BrandItems";
 import PrivateRouter from "./PrivateRouter";
 import SingleProduct from "../pages/SingleProduct";
+import UpdateProduct from "../pages/UpdateProduct";
 
 const Router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const Router = createBrowserRouter([
           {
               path: `/product/:id`,
               element: <PrivateRouter><SingleProduct></SingleProduct></PrivateRouter>,
+              loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+          },
+          {
+              path: `/updateproduct/:id`,
+              element: <UpdateProduct></UpdateProduct>,
               loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
           }
       ]

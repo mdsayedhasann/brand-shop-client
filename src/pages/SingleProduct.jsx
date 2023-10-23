@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // CommonJS
@@ -100,7 +98,7 @@ const SingleProduct = () => {
         >
           Delete
         </button>
-        <button className="btn btn-accent">Update</button>
+        <Link to={`/updateproduct/${_id}`}><button className="btn btn-accent">Update</button></Link>
       </div>
     </div>
   );
