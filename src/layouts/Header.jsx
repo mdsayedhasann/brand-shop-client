@@ -4,7 +4,7 @@ import "./Header.css";
 import { AuthContext } from "../AuthContext/AuthProvider";
 
 const Header = () => {
-  const { user, logout, updateUser } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout()
@@ -60,8 +60,12 @@ const Header = () => {
             </ul>
           </div>
           {/* <a className="btn btn-ghost normal-case text-xl"></a> */}
-          <Link to={'/'}>
-            <img className="w-1/2" src="https://i.ibb.co/3SHnf7M/a.png" alt="" />
+          <Link to={"/"}>
+            <img
+              className="w-1/2"
+              src="https://i.ibb.co/3SHnf7M/a.png"
+              alt=""
+            />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -69,8 +73,16 @@ const Header = () => {
         </div>
         <div className="navbar-end flex gap-2">
           <div className="flex items-center gap-2">
-              <img className="w-[30px] rounded-xl" src={user?.photoURL} alt="" />
-            <p>{user?.displayName}</p>
+            {user && (
+              <>
+                <img
+                  className="w-[30px] rounded-xl"
+                  src={user?.photoURL}
+                  alt=""
+                />
+                <p>{user?.displayName}</p>
+              </>
+            )}
           </div>
           {user && (
             <a onClick={handleLogout} className="btn">

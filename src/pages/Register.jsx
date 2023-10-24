@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProvider";
+
+// React Toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const {user, createUser, updateUser} = useContext(AuthContext)
@@ -12,12 +16,76 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         console.log(email, password);
+
+        if(password.length < 6){
+          toast.error("Password must be at least 6 character", {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return
+        }else if(!/[A-Z]/.test(password)){
+          toast.error("Minimum a Capital letter is required", {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return
+        }else if(!/[0-9]/.test(password)){
+          toast.error("You should use at least one number", {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+
+          return
+        } else if(!/[~,!,@,#,$,%,^,&,*,(,),_,+,},>,.]/.test(password)){
+          toast.error("You should use at least one special character", {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return;
+        }
         createUser(email, password)
         .then(user => {
             console.log(user);
             updateUser(name, photo)
             .then('Update Hoise')
             .catch('Somossa ase')
+            toast.success("Registration Successfull", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+
+            form.reset()
+            redirect('/')
         })
         .catch(error => {
             console.error(error);
@@ -104,6 +172,18 @@ const Register = () => {
                 </p>
               </div>
             </form>
+            <ToastContainer
+                position="Register Success"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
           </div>
         </div>
       </div>

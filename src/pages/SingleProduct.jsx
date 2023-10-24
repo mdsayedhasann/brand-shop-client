@@ -1,5 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthContext/AuthProvider";
+import { useContext } from "react";
 
 // CommonJS
 
@@ -7,6 +9,12 @@ const SingleProduct = () => {
   const product = useLoaderData();
   // const [] = useState(product)
   const { _id, name, photo, price, shortDescription, typeDropsown } = product;
+
+  const {user} = useContext(AuthContext);
+
+  const addToCartHandler = () => {
+    console.log(_id, user.uid);
+  }
 
   const deleteProduct = (_id) => {
     Swal.fire({
@@ -47,7 +55,7 @@ const SingleProduct = () => {
           <h3 className="text-4xl font-bold pt-5"> {name}</h3>
           <h3 className="text-xl py-5 ">Price: {price} </h3>
           <p>{shortDescription}</p>
-          <button className="btn bg-gradient-to-r from-[#975D89] to-[#AC2F67] text-white my-5">
+          <button onClick={addToCartHandler} className="btn bg-gradient-to-r from-[#975D89] to-[#AC2F67] text-white my-5">
             Add To Cart
           </button>
           <hr />

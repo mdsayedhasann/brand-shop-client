@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Brand = ({ brand }) => {
   // const { _id} = brand
   return (
-    <div className="">
+      <div className="">
       <div>
         <figure>
             <Link to={`/brand/${brand._id}`}>

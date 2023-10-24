@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import BrandItem from "../layouts/BrandItem";
 import DisplayProduct from "../layouts/DisplayProduct";
+import AdvertiseSlider from "../layouts/AdvertiseSlider";
+import NoBrands from "../layouts/NoBrands";
 
 const BrandItems = () => {
   const branddd = useLoaderData();
@@ -42,12 +44,13 @@ const BrandItems = () => {
       </div>
 
       {/* Brand Page Slider Start */}
-      <div>
-        
+      <div className="my-4">
+        <AdvertiseSlider></AdvertiseSlider>        
       </div>
       {/* Brand Page Slider Start */}
+
      <div className="grid grid-cols-1 md:grid-cols-3 py-5">
-        {displayProducts.map(displayProduct => <DisplayProduct key={displayProduct._id} displayProduct={displayProduct}></DisplayProduct>)}
+        {displayProducts.length > 0 ?  displayProducts.map(displayProduct => <DisplayProduct key={displayProduct._id} displayProduct={displayProduct}></DisplayProduct>) : <NoBrands></NoBrands>}
      </div>
     </div>
   );

@@ -13,14 +13,16 @@ const Products = () => {
         })
     },[])
     return (
-        <div>
+        <div data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300">
 
             <div className='w-2/4 mx-auto py-10'>
                 <h3 className='text-4xl font-bold text-center'>
                     All Products
                 </h3>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3'>
+            <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3'>
             {
                 products.map(product => <Product key={product._id} product={product}></Product>).slice(0,9)
             }

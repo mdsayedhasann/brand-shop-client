@@ -19,7 +19,8 @@ const Home = () => {
            <div className='py-10'>
               <Mobiles></Mobiles>
            </div>
-           <div className='py-10'>
+           <div data-aos="fade-in" 
+        data-aos-delay="300" className='py-10'>
               <Laptops></Laptops>
            </div>
         </div>
