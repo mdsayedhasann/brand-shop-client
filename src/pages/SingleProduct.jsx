@@ -27,7 +27,7 @@ const SingleProduct = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/product/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

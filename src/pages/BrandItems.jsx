@@ -15,7 +15,7 @@ const BrandItems = () => {
   const [displayProducts, setDisplayProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

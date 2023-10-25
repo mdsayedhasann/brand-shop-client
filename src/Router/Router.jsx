@@ -14,21 +14,23 @@ import BrandItems from "../pages/BrandItems";
 import PrivateRouter from "./PrivateRouter";
 import SingleProduct from "../pages/SingleProduct";
 import UpdateProduct from "../pages/UpdateProduct";
+import Error from "../pages/Error";
 
 const Router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <Error></Error>,
       children: [
           {
               path: '/',
               element: <Home></Home>,
-              loader: () => fetch('http://localhost:5000/brands')
+              loader: () => fetch('https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/brands')
           },
           {
               path: '/addproduct',
               element: <PrivateRouter><AddProduct></AddProduct></PrivateRouter> ,
-              loader: () => fetch('http://localhost:5000/brands')
+              loader: () => fetch('https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/brands')
           },
           {
               path: '/cart',
@@ -50,17 +52,17 @@ const Router = createBrowserRouter([
           {
               path: `/brand/:id`,
               element: <BrandItems></BrandItems>,
-              loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
+              loader: ({params}) => fetch(`https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/brands/${params.id}`)
           }, 
           {
               path: `/product/:id`,
               element: <PrivateRouter><SingleProduct></SingleProduct></PrivateRouter>,
-              loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+              loader: ({params}) => fetch(`https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/product/${params.id}`)
           },
           {
               path: `/updateproduct/:id`,
               element: <UpdateProduct></UpdateProduct>,
-              loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+              loader: ({params}) => fetch(`https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/product/${params.id}`)
           }
       ]
     },

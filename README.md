@@ -1,8 +1,8 @@
-# React + Vite
+# Brand Electronics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+- CRUD Operations
+- Responsive
+- Used React and Node
+- Brands and Priducts, when clicked any brands, all products under this brand are displaying, If there have no products in a brand, its showing a error message
+- Login and Register with Strong password

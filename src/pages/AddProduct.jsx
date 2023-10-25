@@ -34,7 +34,7 @@ const AddProduct = () => {
       brandDropsown
     );
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,7 +58,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="max-w-7xl mx-auto">
+    <div data-aos="fade-down" data-aos-duration="2000" className="max-w-7xl mx-auto">
       <form onSubmit={handleAddProduct}>
         <div className="w-1/2 mx-auto">
           <div className="grid grid-cols-2 gap-5">

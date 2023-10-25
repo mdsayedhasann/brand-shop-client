@@ -77,10 +77,10 @@ const Header = () => {
               <>
                 <img
                   className="w-[30px] rounded-xl"
-                  src={user?.photoURL}
+                  src={user.photoURL}
                   alt=""
                 />
-                <p>{user?.displayName}</p>
+                <p>{user.displayName}</p>
               </>
             )}
           </div>

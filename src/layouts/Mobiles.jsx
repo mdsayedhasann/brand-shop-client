@@ -6,7 +6,7 @@ const Mobiles = () => {
     const [products, setProducts] = useState([])
     const [mobileProduct, setMobileProduct] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data)
@@ -21,7 +21,7 @@ const Mobiles = () => {
                 </h3>
             </div>
 
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
                 {
                     mobileProduct.map(mobileProd => <Mobile key={mobileProd.name} mobileProd={mobileProd}></Mobile>).slice(0,6)
                 }

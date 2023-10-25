@@ -18,7 +18,7 @@ const UpdateProduct = () => {
   const [typeDropsown, setTypeDropsown] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/brands/")
+    fetch("https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/brands/")
       .then((res) => res.json())
       .then((data) => {
         setBrands(data);
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
       const updateProduct = {name, typeDropsown, shortDescription, price, photo}
     console.log(updateProduct);
 
-    fetch(`http://localhost:5000/product/${products._id}`, {
+    fetch(`https://brand-shop-server-4mugp4b17-md-sayed-hasans-projects.vercel.app/product/${products._id}`, {
         method: 'PUT', 
         headers: {
             'content-type': 'application/json'

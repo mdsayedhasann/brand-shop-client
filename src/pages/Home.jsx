@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import Products from './Products';
 import Mobiles from '../layouts/Mobiles';
 import Laptops from '../layouts/Laptops';
+import AboutUs from '../layouts/AboutUs';
 
 const Home = () => {
     return (
@@ -14,13 +15,15 @@ const Home = () => {
                <Brands></Brands>
            </div>
            <div className='py-10'>
+                <AboutUs></AboutUs>
+           </div>
+           <div className='py-10'>
                <Products></Products>
            </div>
            <div className='py-10'>
               <Mobiles></Mobiles>
            </div>
-           <div data-aos="fade-in" 
-        data-aos-delay="300" className='py-10'>
+           <div className='py-10'>
               <Laptops></Laptops>
            </div>
         </div>
