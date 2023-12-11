@@ -1,7 +1,6 @@
-import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2'
@@ -14,7 +13,6 @@ const UpdateProduct = () => {
 
   const [brands, setBrands] = useState("");
   const [brandDropsown, setBrandDropsown] = useState("");
-
   const [typeDropsown, setTypeDropsown] = useState("");
 
   useEffect(() => {
